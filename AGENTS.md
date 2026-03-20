@@ -15,6 +15,9 @@ If you need to consider up-to-date documentation and samples (e.g. because you a
   * Context7 library ID: llmstxt/orm_drizzle_team_llms_txt
 * For Biome.js:
   * Context7 library ID: biomejs/biome
+* For Vitest:
+  * Documentation: https://vitest.dev/llms.txt
+  * Context7 library ID: vitest-dev/vitest
 </documentation-and-samples>
 
 <files>
