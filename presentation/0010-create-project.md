@@ -37,6 +37,7 @@ We do not need any automated tests for the console app for now.
 
 * Workspace has been created
 * All projects have been created
+* Root `package.json` contains scripts for linting, formatting, type checking, testing, starting web app, and running console app
 * All projects have been linted, formatted, and type checked without errors/warnings
 * `npm outdated` shows no outdated dependencies
 * Tests have been run and passed
