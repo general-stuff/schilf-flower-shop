@@ -27,6 +27,8 @@ Integrate Material UI (MUI) for UI components.
 
 The application should consist of a single page that displays _Hello World_ and the result of calling the `add` function from the library. Add a `thumbs-up` icon to verify that Font Awesome is working (use @fortawesome/react-fontawesome). Write an end-to-end test verifying the "Hello World" page.
 
+Disable auto CSS injection for Font Awesome and import styles in the root layout to prevent the icon flash on load.
+
 Integrate a single demo unit test (1+2=3) to make sure Vitest is working.
 
 ## Console app

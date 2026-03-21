@@ -42,6 +42,8 @@ Ignore all files in the `presentation` folder unless you are explicitly asked to
 * Use Client Components for UI components that need to be interactive
 * Use tRPC for API calls only if needed (prefer Server Components)
 * When generating UI-related code, only write end-to-end tests if explicitly asked to
+* Use regular CSS (modern, with nested selectors), no Tailwind
+* Limit global styles to a minimum, prefer local styles
 </nextjs-guidelines>
 
 <quality-assurance>
