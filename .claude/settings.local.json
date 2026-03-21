@@ -2,6 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(curl -s https://nextjs.org/docs/llms.txt)",
+      "Bash(curl -s https://orm.drizzle.team/llms.txt)",
+      "Bash(curl -s https://orm.drizzle.team/docs/*)",
       "mcp__plugin_context7_context7__resolve-library-id",
       "mcp__plugin_context7_context7__query-docs",
       "Bash(pnpm create:*)",
@@ -10,7 +12,14 @@
       "Bash(pnpm format:*)",
       "Bash(pnpm typecheck:*)",
       "Bash(pnpm outdated:*)",
-      "Bash(pnpm update:*)"
+      "Bash(pnpm update:*)",
+      "Bash(pnpm --version)",
+      "Bash(node --version)",
+      "Bash(npm view:*)",
+      "Bash(pnpm test:*)",
+      "Bash(pnpm:*)",
+      "Skill(playwright-cli)",
+      "WebFetch(domain:orm.drizzle.team)"
     ]
   }
 }

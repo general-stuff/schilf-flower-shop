@@ -18,7 +18,17 @@ If you need to consider up-to-date documentation and samples (e.g. because you a
 * For Vitest:
   * Documentation: https://vitest.dev/llms.txt
   * Context7 library ID: vitest-dev/vitest
+* For Material UI (MUI):
+  * Documentation: https://mui.com/material-ui/llms.txt
+  * Context7 library ID: mui/material-ui
+* tRPC:
+  * Documentation: https://trpc.io/llms.txt
+  * Context7 library ID: websites/trpc_io
 </documentation-and-samples>
+
+<package-manager>
+Use pnpm as package manager.
+</package-manager>
 
 <files>
 Inspect `package.json` to see the dependencies with versions and scripts.
@@ -26,6 +36,16 @@ Inspect `package.json` to see the dependencies with versions and scripts.
 Ignore all files in the `presentation` folder unless you are explicitly asked to read one of them.
 </files>
 
+<nextjs-guidelines>
+* Use App Router
+* Use Server Components for data fetching
+* Use Client Components for UI components that need to be interactive
+* Use tRPC for API calls only if needed (prefer Server Components)
+* When generating UI-related code, only write end-to-end tests if explicitly asked to
+</nextjs-guidelines>
+
 <quality-assurance>
-After updating or adding any code, make sure that linting, formatting, and type checking pass without errors/warnings.
+After updating or adding any code, make sure that linting, formatting, type checking and unit tests pass without errors/warnings.
+
+Do not run Playwright tests unless you are explicitly asked to.
 </quality-assurance>
