@@ -39,6 +39,8 @@ Use the following folder structure:
 * `packages/lib` — library with business logic and data access layer
 * `apps/web` — Next.js project that uses the library
 * `apps/console` — console app that uses the library
+
+Do NOT add any data access code to the web or console apps. This code must be in the library.
 </files>
 
 <nextjs-guidelines>
