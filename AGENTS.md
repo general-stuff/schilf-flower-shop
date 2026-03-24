@@ -44,10 +44,13 @@ Ignore all files in the `presentation` folder unless you are explicitly asked to
 * When generating UI-related code, only write end-to-end tests if explicitly asked to
 * Use regular CSS (modern, with nested selectors), no Tailwind
 * Limit global styles to a minimum, prefer local styles
+* Use self-hosted Google Fonts as specified in the brand guidelines
 </nextjs-guidelines>
 
 <quality-assurance>
 After updating or adding any code, make sure that linting, formatting, type checking and unit tests pass without errors/warnings.
+
+Always install dependencies using pnpm. Always install the latest version if not explicitly asked to use a specific version. Do NOT add dependencies manually to `package.json`.
 
 Do not run Playwright tests unless you are explicitly asked to.
 </quality-assurance>
