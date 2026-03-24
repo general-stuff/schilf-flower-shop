@@ -34,6 +34,11 @@ Use pnpm as package manager.
 Inspect `package.json` to see the dependencies with versions and scripts.
 
 Ignore all files in the `presentation` folder unless you are explicitly asked to read one of them.
+
+Use the following folder structure:
+* `packages/lib` — library with business logic and data access layer
+* `apps/web` — Next.js project that uses the library
+* `apps/console` — console app that uses the library
 </files>
 
 <nextjs-guidelines>
