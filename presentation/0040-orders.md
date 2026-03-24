@@ -25,6 +25,7 @@ Add Zod schemas for the inputs of `addOrder` and `getOrderById` and export them 
 * The streaming API endpoint must send a dedicated named SSE event whenever a tool call occurs, including the tool name and its arguments.
 * On the client side, visualize tool call events by rendering the tool name.
   * Unfoldable to see tool call details (`pre`).
+* Adjust the system prompt to use the function tool.
 
 ## Console App — Commander.js
 
@@ -32,3 +33,9 @@ Add Zod schemas for the inputs of `addOrder` and `getOrderById` and export them 
 * Add a `list` command that lists orders using `listOrders`.
   * The command accepts an optional `--top <n>` option to configure how many orders to retrieve (default: 10).
   * Print the results to stdout in a human-readable format.
+
+## End-to-End Testing
+
+* Add an end-to-end test that specifies a data of a new order in a single input.
+* Ensure that tool call event is visible in the chat history.
+* Use the `listOrders` function in the library to verify that the order was created.

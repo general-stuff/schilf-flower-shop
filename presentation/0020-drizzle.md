@@ -22,7 +22,7 @@ Add Drizzle ORM with SQLite (via `better-sqlite3`) to the existing Next.js proje
 * Create a data access layer that is cleanly separated from any UI code.
 * Don't forget: Data access code must be in the library, not in the web or console apps.
 * The data access layer must export:
-  * The Drizzle database client instance.
+  * The Drizzle database client instance (exported function `getDb()`).
   * A function (e.g. `getDbStatus`) that executes something like `SELECT 42 AS result` and returns the result. This serves as a simple health-check query.
 
 ### UI Integration
