@@ -10,6 +10,9 @@ If you need to consider up-to-date documentation and samples (e.g. because you a
   * Context7 library ID: vercel/next.js
 * For AI SDK:
   * Context7 library ID: websites/ai-sdk_dev
+* For OpenAI SDK:
+  * Documentation: https://developers.openai.com/api/docs/llms.txt
+  * Context7 library ID: websites/developers_openai_api
 * For Drizzle ORM:
   * Documentation: https://orm.drizzle.team/llms.txt
   * Context7 library ID: llmstxt/orm_drizzle_team_llms_txt
@@ -50,7 +53,8 @@ Do NOT add any data access code to the web or console apps. This code must be in
 * Use tRPC for API calls only if needed (prefer Server Components)
 * When generating UI-related code, only write end-to-end tests if explicitly asked to
 * Use regular CSS (modern, with nested selectors), no Tailwind
-* Limit global styles to a minimum, prefer local styles
+  * Limit global styles to a minimum, prefer local styles
+  * Use HTML tables only if it has a significant benefit, otherwise use CSS Grid or Flexbox
 * Use self-hosted Google Fonts as specified in the brand guidelines
 </nextjs-guidelines>
 
