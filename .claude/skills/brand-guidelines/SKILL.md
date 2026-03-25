@@ -30,26 +30,35 @@ Use a bouquet-inspired palette with soft neutrals, petal tones, and botanical ac
 **Core Colors:**
 
 - Ivory: `#faf7f2` - Main light background
-- Charcoal Brown: `#3d342f` - Primary text and dark accents
-- Soft Taupe: `#cbbfb3` - Secondary neutral elements
+- Charcoal Brown: `#3d342f` - Primary text and dark accents (contrast ~13:1 on ivory)
+- Deep Taupe: `#6e5f57` - Secondary text and neutral elements (contrast ~5:1 on ivory)
 - Blush Cream: `#f3e7df` - Subtle backgrounds and panels
 
 **Floral Accent Colors:**
 
-- Rose Pink: `#d88fa0` - Romantic highlight
-- Peony Coral: `#e79b7d` - Warm accent
-- Lavender Mauve: `#b79ac8` - Elegant secondary accent
-- Sage Green: `#91a68b` - Botanical accent
-- Deep Leaf Green: `#5f7a61` - Strong natural contrast
-- Butter Yellow: `#e8d88a` - Soft cheerful highlight
+- Deep Rose: `#a84060` - Romantic highlight (contrast ~6.5:1 on ivory)
+- Terracotta Coral: `#b85530` - Warm accent (contrast ~5.5:1 on ivory)
+- Plum Lavender: `#7050a0` - Elegant secondary accent (contrast ~6:1 on ivory)
+- Forest Sage: `#4a6e45` - Botanical accent (contrast ~6:1 on ivory)
+- Deep Leaf Green: `#3d6040` - Strong natural contrast (contrast ~7:1 on ivory)
+- Amber Gold: `#8a6c10` - Warm cheerful highlight (contrast ~5.5:1 on ivory)
+
+**Decorative-Only Colors (backgrounds, borders, shapes — not for text):**
+
+- Soft Blush: `#e8b8c4` - Light petal tone for decorative use
+- Peach Tint: `#f0c8a8` - Warm petal background
+- Lavender Mist: `#d4c0e8` - Soft accent for shapes and fills
+- Sage Mist: `#b8d0b4` - Light botanical tint
+- Butter Cream: `#f0e0a0` - Soft decorative highlight
 
 ### Color Usage Rules
 
 - Use ivory or blush cream as the default background base.
 - Use charcoal brown for primary text instead of pure black.
-- Use floral accent colors sparingly and intentionally.
-- Prefer sage green or deep leaf green for dividers, badges, or subtle emphasis.
-- Use rose pink, coral, and lavender for featured accents, decorative shapes, or callouts.
+- Use deep taupe for secondary text, captions, and metadata.
+- Use floral accent colors (deep rose, terracotta, plum lavender, etc.) sparingly and intentionally for interactive elements, headings, badges, or emphasis.
+- Reserve decorative-only colors exclusively for backgrounds, borders, fills, or shapes — never as text color.
+- Prefer forest sage or deep leaf green for dividers, badges, or subtle emphasis.
 - Keep layouts airy; do not oversaturate every element with color.
 - When multiple accents are used together, keep one dominant and the others supporting.
 
