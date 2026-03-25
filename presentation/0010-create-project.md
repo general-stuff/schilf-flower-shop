@@ -11,11 +11,11 @@ Create a workspace for our project. It must contain three projects:
 * Use tsc for type checking
 * Use Vitest for unit testing
 * Use Playwright for end-to-end testing
-* Use the latest version of all dependencies. Research documentation to ensure you are following latest good practices.
+* Use the latest version of all dependencies. Research the documentation to ensure you are following the latest good practices.
 
 ## Library
 
-For now, the libary should just export a `math` module with an `add` function. This is just an example that we will replace later.
+For now, the library should just export a `math` module with an `add` function. This is just an example that we will replace later.
 
 The library must also contain unit tests with Vitest. Add a demo test for the `add` function.
 
@@ -29,7 +29,7 @@ The application should consist of a single page that displays _Hello World_ and 
 
 Disable auto CSS injection for Font Awesome and import styles in the root layout to prevent the icon flash on load.
 
-Integrate a single demo unit test (1+2=3) to make sure Vitest is working.
+Add a single demo unit test (1 + 2 = 3) to make sure Vitest is working.
 
 ## Console app
 
@@ -41,7 +41,7 @@ We do not need any automated tests for the console app for now.
 
 * Workspace has been created
 * All projects have been created
-* Root `package.json` contains scripts for linting, formatting, type checking, testing, starting web app, and running console app
+* Root `package.json` contains scripts for linting, formatting, type checking, testing, starting the web app, and running the console app
 * All projects have been linted, formatted, and type checked without errors/warnings
 * `npm outdated` shows no outdated dependencies
 * Tests (unit and end-to-end) have been run and passed

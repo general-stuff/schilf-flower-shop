@@ -5,7 +5,7 @@ Add Drizzle ORM with SQLite (via `better-sqlite3`) to the existing Next.js proje
 ### Database Setup
 
 * Use SQLite as the database engine with `better-sqlite3` as the driver.
-* The SQLite database file location must be configurable via .env.local (during development) and environment variables (during production):
+* The SQLite database file location must be configurable via `.env.local` (during development) and environment variables (in production):
   * `DB_FOLDER` — folder where the database file is stored (default: `./data` relative to the project root folder)
   * `DB_NAME` — name of the database file (default: `flower_shop.db`)
 * Add the database folder and `*.db` files to `.gitignore`.
@@ -69,11 +69,11 @@ Add Drizzle ORM with SQLite (via `better-sqlite3`) to the existing Next.js proje
 
 * Remove the existing demo logic from the console app.
 * Add `commander` to the console app for implementing a CLI.
-* Add a `ping` command that calls `getDbStatus` and prints the result to stdout. This serves as a simple health-check.
+* Add a `ping` command that calls `getDbStatus` and prints the result to stdout. This serves as a simple health check.
 * Add a `fill` command that calls `fillFlowers` to insert the demo data into the database.
 * Add a `list` command that calls `listFlowers` and prints the result to stdout.
 
-Add a skill to ./.claude/skills describing how to use the CLI.
+Add a skill to `./.claude/skills` describing how to use the CLI.
 
 * Name of the skill: `flower-shop-cli`
 * Description: "Use this skill to interact with the Flower Shop CLI."

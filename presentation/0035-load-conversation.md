@@ -6,7 +6,7 @@ When the chat page is loaded and there is already a conversation ID in the sessi
 
 Once the conversation has been loaded, the conversation history must automatically scroll down to the bottom of the chat history.
 
-Put a second button to the right of the "send" button that starts a new conversation by generating a new conversation ID and storing it in the session.
+Add a second button to the right of the "send" button that starts a new conversation by generating a new conversation ID and storing it in the session.
 
 ## Technical Requirements
 

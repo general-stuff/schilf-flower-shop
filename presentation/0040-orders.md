@@ -2,7 +2,7 @@
 
 ## Database
 
-* Add a new table `orders` to the schema in library:
+* Add a new table `orders` to the schema in the library:
   * Generated PK (surrogate key)
   * Customer name
   * Order date (ISO 8601, stored as UTC timestamp)
@@ -33,25 +33,25 @@ Add a new page to the web app that lists all orders.
 
 * Add a function tool to the bot that allows the AI to place an order on behalf of the customer.
   * The tool receives the full order (all columns except the generated PK and the order date) and persists it via `addOrder`.
-  * Reuses zod schema for tool arguments (structured output).
+  * Reuse the Zod schema for tool arguments (structured output).
   * The tool must return the complete order object with the generated PK and order date to the agent.
-* The streaming API endpoint must send a dedicated named SSE event whenever a tool call occurs, including the tool name its arguments.
+* The streaming API endpoint must send a dedicated named SSE event whenever a tool call occurs, including the tool name and its arguments.
 * On the client side, visualize tool call events by rendering the tool name.
-  * Unfoldable to see tool call details (`pre`).
+  * Expandable to show the tool call details (`pre`).
 * Adjust the system prompt to use the function tool.
 
 ## Console App — Commander.js
 
 Enhance the CLI:
 
-* Command for list orders
-* Command for adding an order. Order data must be passed via STDIN in JSON format.
+* Command to list orders
+* Command to add an order. Order data must be passed via STDIN in JSON format.
 
 Extend the `flower-shop-cli` skill to describe the new commands. Include an example JSON for an order.
 
 ## End-to-End Testing
 
-* Add an end-to-end test that specifies a data of a new order in a single input.
+* Add an end-to-end test that specifies the data of a new order in a single input.
 * Ensure that tool call event is visible in the chat history.
 * Wait for 500ms, then navigate to the orders page and verify that the order is listed as the most recent order.
 

@@ -58,3 +58,24 @@ Required JSON fields: `customerName`, `flowerName`, `size` (`S`, `M`, or `L`), `
 ```bash
 echo '{"customerName":"Alice","flowerName":"Rose","size":"M","color":"red"}' | pnpm --filter console exec tsx src/index.ts add-order
 ```
+
+### `mcp` — Start an MCP server
+
+Starts a Model Context Protocol (MCP) server using stdio transport. The server exposes two tools for LLM clients:
+
+- **`list-orders`** — List recent orders with optional `skip`/`top` pagination.
+- **`place-order`** — Place a new bouquet order (`customerName`, `flowerName`, `size`, `color`).
+
+The MCP server does **not** print any output to stdout (stdout is reserved for JSON-RPC protocol messages). Log messages are written to stderr.
+
+```bash
+pnpm --filter console exec tsx src/index.ts mcp
+```
+
+#### Testing with MCP Inspector
+
+Use the [MCP Inspector](https://github.com/modelcontextprotocol/inspector) to interactively test the server:
+
+```bash
+npx @modelcontextprotocol/inspector pnpm --filter console exec tsx src/index.ts mcp
+```
