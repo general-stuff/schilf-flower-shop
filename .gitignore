@@ -46,3 +46,7 @@ dist/
 # playwright
 test-results/
 playwright-report/
+
+# database
+data/
+*.db

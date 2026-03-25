@@ -1,3 +1,6 @@
 {
-	"recommendations": ["fill-labs.dependi"]
+	"recommendations": [
+		"fill-labs.dependi",
+		"qwtel.sqlite-viewer"
+	]
 }
