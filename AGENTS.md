@@ -28,6 +28,9 @@ If you need to consider up-to-date documentation and samples (e.g. because you a
   * Context7 library ID: mui/material-ui
 * iron-session:
   * Context7 library ID: vvo/iron-session
+* Model Context Protocol (MCP) Server:
+  * Documentation: https://modelcontextprotocol.io/llms.txt
+  * Context7 library ID: websites/modelcontextprotocol_io_specification
 </documentation-and-samples>
 
 <package-manager>
