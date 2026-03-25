@@ -3,19 +3,23 @@
 ## Database
 
 * Add two new tables to schema in library:
-  * `orders`: customer name, address (single string), order date (ISO 8601, stored as UTC timestamp)
-  * `order_details` (bouquets belonging to an order): foreign key to `orders`, flower name, size (enum: S, M, L), color
+  * `orders`: generated PK (surrogate key), customer name, address (single string), order date (ISO 8601, stored as UTC timestamp)
+  * `order_details` (bouquets belonging to an order): generated PK (surrogate key), foreign key to `orders`, flower name, size (enum: S, M, L), color
 * Create and apply the migration.
 
 ## Data Access (library)
 
 Add the following functions to `packages/lib`:
 
-* `addOrder(order)` — inserts an order together with its order details in a single transaction; returns the created order including its generated ID
-* `getOrderById(id)` — returns a single order with its details, or `undefined` if not found
-* `listOrders(top?)` — returns the most recent orders ordered by order date descending; defaults to top 10, configurable via the `top` parameter
+* `addOrder(order)` — inserts an order together with optional order details (bouquets) in a single transaction; returns generated ID
+* `getOrderById(id)` — returns a single order with its details (bouquets), or `undefined` if not found
+* `getOrderDetailById(id)` — returns a single order detail (bouquet) with its details, or `undefined` if not found
+* `removeOrderDetailById(id)` — removes a single order detail (bouquet) by its ID
+* `addOrderDetail(orderId, orderDetail)` — inserts a single order detail (bouquet) into the database; returns generated ID
+* `listOrders(top?)` — returns the most recent orders (without details) ordered by order date descending; defaults to top 10, configurable via the `top` parameter
+* `listOrderDetails(orderId)` — returns all order details (bouquets) for a given order ID
 
-Add Zod schemas for the inputs of `addOrder` and `getOrderById` and export them from the library.
+Add Zod schemas for the inputs and outputs of all functions and export them from the library.
 
 ## Chat Bot — Function Tool
 

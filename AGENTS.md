@@ -9,7 +9,9 @@ If you need to consider up-to-date documentation and samples (e.g. because you a
   * Documentation: https://nextjs.org/docs/llms.txt
   * Context7 library ID: vercel/next.js
 * For AI SDK:
+  * Documentation: https://ai-sdk.dev/llms.txt
   * Context7 library ID: websites/ai-sdk_dev
+  * Detailed documentation about OpenAI integration in the AI SDK: https://ai-sdk.dev/providers/ai-sdk-providers/openai
 * For OpenAI SDK:
   * Documentation: https://developers.openai.com/api/docs/llms.txt
   * Context7 library ID: websites/developers_openai_api
@@ -24,9 +26,8 @@ If you need to consider up-to-date documentation and samples (e.g. because you a
 * For Material UI (MUI):
   * Documentation: https://mui.com/material-ui/llms.txt
   * Context7 library ID: mui/material-ui
-* tRPC:
-  * Documentation: https://trpc.io/llms.txt
-  * Context7 library ID: websites/trpc_io
+* iron-session:
+  * Context7 library ID: vvo/iron-session
 </documentation-and-samples>
 
 <package-manager>
@@ -56,6 +57,7 @@ Do NOT add any data access code to the web or console apps. This code must be in
   * Limit global styles to a minimum, prefer local styles
   * Use HTML tables only if it has a significant benefit, otherwise use CSS Grid or Flexbox
 * Use self-hosted Google Fonts as specified in the brand guidelines
+* Use `marked` whenever you need to convert markdown to HTML.
 </nextjs-guidelines>
 
 <quality-assurance>
