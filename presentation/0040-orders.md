@@ -47,7 +47,7 @@ Enhance the CLI:
 * Command for list orders
 * Command for adding an order. Order data must be passed via STDIN in JSON format.
 
-Extend the `flower-shop-cli` skill to describe the new commands.
+Extend the `flower-shop-cli` skill to describe the new commands. Include an example JSON for an order.
 
 ## End-to-End Testing
 

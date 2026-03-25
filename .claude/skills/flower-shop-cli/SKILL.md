@@ -40,3 +40,21 @@ Returns all flowers from the database as formatted JSON.
 ```bash
 pnpm --filter console exec tsx src/index.ts list
 ```
+
+### `list-orders` — List recent orders
+
+Returns the most recent orders from the database as formatted JSON (default: 10).
+
+```bash
+pnpm --filter console exec tsx src/index.ts list-orders
+```
+
+### `add-order` — Add an order
+
+Reads order data as JSON from STDIN and inserts it into the database. Returns the complete order object including the generated ID and order date.
+
+Required JSON fields: `customerName`, `flowerName`, `size` (`S`, `M`, or `L`), `color`.
+
+```bash
+echo '{"customerName":"Alice","flowerName":"Rose","size":"M","color":"red"}' | pnpm --filter console exec tsx src/index.ts add-order
+```
