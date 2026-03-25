@@ -73,6 +73,12 @@ Add Drizzle ORM with SQLite (via `better-sqlite3`) to the existing Next.js proje
 * Add a `fill` command that calls `fillFlowers` to insert the demo data into the database.
 * Add a `list` command that calls `listFlowers` and prints the result to stdout.
 
+Add a skill to ./.claude/skills describing how to use the CLI.
+
+* Name of the skill: `flower-shop-cli`
+* Description: "Use this skill to interact with the Flower Shop CLI."
+* Describe how to run the CLI using `pnpm`. Mention all available commands with example command lines.
+
 ## Acceptance Criteria
 
 * Migrations have been generated and applied

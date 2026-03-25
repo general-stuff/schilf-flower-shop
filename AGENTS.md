@@ -57,11 +57,11 @@ Do NOT add any data access code to the web or console apps. This code must be in
   * Limit global styles to a minimum, prefer local styles
   * Use HTML tables only if it has a significant benefit, otherwise use CSS Grid or Flexbox
 * Use self-hosted Google Fonts as specified in the brand guidelines
-* Use `marked` whenever you need to convert markdown to HTML.
+* Use `marked` whenever you need to convert markdown to HTML. Always use `DOMPurify` to sanitize the HTML before displaying it (security reasons).
 </nextjs-guidelines>
 
 <quality-assurance>
-After updating or adding any code, make sure that linting, formatting, type checking and unit tests pass without errors/warnings.
+After updating or adding any code, make sure that linting, formatting, type checking and unit tests pass without errors/warnings. Always use the scripts in `package.json` to run checks and tests; do NOT run them manually.
 
 Always install dependencies using pnpm. Always install the latest version if not explicitly asked to use a specific version. Do NOT add dependencies manually to `package.json`.
 

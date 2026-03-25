@@ -16,14 +16,18 @@ Add a page to fill the database with demo data. It uses the `fillFlowers` functi
 * Refresh the flower list after the filling is complete.
 * If the user clicks on a flower name, use a HTML modal dialog to display the flower details (name, description, colors). Convert markdown in the description to HTML.
 
-## Testing
+## Cleanup
 
 * Remove the demo end-to-end tests for the home page.
-* Add and run an end-to-end test verifying that the fill database page works
-  * Clear the database content before the test.
-  * Check if the button is visible and clickable. The flower list must be empty.
-  * Click the button.
-  * Verify that the flower list is not empty once the filling is complete.
+* Remove any demo logic from the library that might sill exist.
+
+## Testing
+
+Add and run an end-to-end test verifying that the fill database page works:
+
+* Check if the button is visible and clickable.
+* Click the button.
+* Verify that the flower list is not empty once the filling is complete.
 
 ## Acceptance Criteria
 
