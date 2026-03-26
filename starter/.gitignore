@@ -2,5 +2,6 @@ node_modules
 .next
 dist
 *.db
+data/
 playwright-report
 test-results

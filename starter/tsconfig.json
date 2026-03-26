@@ -11,7 +11,8 @@
 		"declarationMap": true,
 		"sourceMap": true,
 		"resolveJsonModule": true,
-		"isolatedModules": true
+		"isolatedModules": true,
+		"allowImportingTsExtensions": true
 	},
 	"references": [
 		{ "path": "packages/lib" },

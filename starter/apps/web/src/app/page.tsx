@@ -1,3 +1,4 @@
+import { getDb, getDbStatus } from "@flower-shop/lib";
 import { add } from "@flower-shop/lib/math";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,6 +11,8 @@ import SessionInitializer from "./SessionInitializer";
 
 export default async function Home() {
 	const result = add(1, 2);
+	const db = getDb();
+	const dbStatus = await getDbStatus(db);
 	const session = await getIronSession<SessionData>(
 		await cookies(),
 		sessionOptions,
@@ -23,6 +26,9 @@ export default async function Home() {
 				</Typography>
 				<Typography variant="h5" gutterBottom>
 					1 + 2 = {result}
+				</Typography>
+				<Typography variant="body1" gutterBottom data-testid="db-status">
+					DB status: {dbStatus}
 				</Typography>
 				<Box sx={{ mt: 2, fontSize: "2rem", color: "primary.main" }}>
 					<FontAwesomeIcon icon={faThumbsUp} />

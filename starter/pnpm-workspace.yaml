@@ -4,3 +4,4 @@ packages:
 onlyBuiltDependencies:
   - "esbuild"
   - "@biomejs/biome"
+  - "better-sqlite3"

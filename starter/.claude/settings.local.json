@@ -2,7 +2,9 @@
 	"permissions": {
 		"allow": [
 			"Bash(cat /Users/rstropek/github/schilf_flower_shop/starter/.vscode/*.json)",
-			"Bash(npx biome:*)"
+			"Bash(npx biome:*)",
+			"Bash(ls node_modules/.pnpm/ai*/node_modules/ai/)",
+			"Bash(find . -path */node_modules/ai/package.json -maxdepth 5)"
 		]
 	}
 }

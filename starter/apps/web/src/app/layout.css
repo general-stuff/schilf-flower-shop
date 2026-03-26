@@ -1,0 +1,33 @@
+.site-header {
+	background-color: #a84060;
+	color: #faf7f2;
+	text-align: center;
+	padding: 2rem 1.5rem 1rem;
+}
+
+.site-header__title {
+	font-family: "Playfair Display", Georgia, serif;
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin: 0 0 0.75rem;
+}
+
+.site-nav {
+	display: flex;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.site-nav__link {
+	color: #faf7f2;
+	font-family: "Lora", Georgia, serif;
+	font-size: 1rem;
+	text-decoration: none;
+	opacity: 0.85;
+	transition: opacity 0.2s;
+
+	&:hover {
+		opacity: 1;
+		text-decoration: underline;
+	}
+}

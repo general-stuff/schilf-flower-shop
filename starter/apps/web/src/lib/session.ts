@@ -2,6 +2,7 @@ import type { SessionOptions } from "iron-session";
 
 export interface SessionData {
 	randomNumber?: number;
+	conversationId?: string;
 }
 
 if (!process.env.IRON_SESSION_PASSWORD) {

@@ -10,6 +10,7 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
+		"@ai-sdk/openai": "^3.0.48",
 		"@emotion/cache": "^11.14.0",
 		"@emotion/react": "^11.14.0",
 		"@emotion/styled": "^11.14.1",
@@ -19,13 +20,18 @@
 		"@fortawesome/react-fontawesome": "^3.3.0",
 		"@mui/material": "^7.3.9",
 		"@mui/material-nextjs": "^7.3.9",
+		"ai": "^6.0.138",
+		"dompurify": "^3.3.3",
 		"iron-session": "^8.0.4",
+		"marked": "^17.0.5",
 		"next": "^16.2.1",
+		"openai": "^6.33.0",
 		"react": "^19.2.4",
 		"react-dom": "^19.2.4"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.58.2",
+		"@types/dompurify": "^3.2.0",
 		"@types/node": "^25.5.0",
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",

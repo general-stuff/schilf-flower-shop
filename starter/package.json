@@ -10,7 +10,9 @@
 		"dev": "pnpm --filter web dev",
 		"start": "pnpm --filter web start",
 		"build": "pnpm --filter web build",
-		"console": "pnpm --filter console start"
+		"console": "pnpm --filter console start --",
+		"db:generate": "pnpm --filter @flower-shop/lib db:generate",
+		"db:migrate": "pnpm --filter @flower-shop/lib db:migrate"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.4.9",
