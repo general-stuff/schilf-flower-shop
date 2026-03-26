@@ -1,0 +1,8 @@
+{
+	"permissions": {
+		"allow": [
+			"Bash(cat /Users/rstropek/github/schilf_flower_shop/starter/.vscode/*.json)",
+			"Bash(npx biome:*)"
+		]
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true
+	},
+	"references": [
+		{ "path": "packages/lib" },
+		{ "path": "apps/web" },
+		{ "path": "apps/console" }
+	],
+	"files": []
+}

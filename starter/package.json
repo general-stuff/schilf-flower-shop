@@ -1,0 +1,20 @@
+{
+	"name": "flower-shop",
+	"private": true,
+	"scripts": {
+		"lint": "biome check .",
+		"format": "biome check --write .",
+		"typecheck": "tsc -b",
+		"test": "vitest run",
+		"test:e2e": "pnpm --filter web exec playwright test",
+		"dev": "pnpm --filter web dev",
+		"start": "pnpm --filter web start",
+		"build": "pnpm --filter web build",
+		"console": "pnpm --filter console start"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.9",
+		"typescript": "^6.0.2",
+		"vitest": "^4.1.1"
+	}
+}
