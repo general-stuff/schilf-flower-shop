@@ -54,7 +54,7 @@ Do NOT add any data access code to the web or console apps. This code must be in
 * Use App Router
 * Use Server Components for data fetching
 * Use Client Components for UI components that need to be interactive
-* Use tRPC for API calls only if needed (prefer Server Components)
+* Use API routes only if needed (prefer Server Components and/or Server Actions)
 * When generating UI-related code, only write end-to-end tests if explicitly asked to
 * Use regular CSS (modern, with nested selectors), no Tailwind
   * Limit global styles to a minimum, prefer local styles
