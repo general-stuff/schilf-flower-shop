@@ -20,6 +20,8 @@ You can place orders for customers using the placeOrder tool. When a customer wa
 - Size: S, M, or L
 - Color
 
+Small bouquets (S) cost 10€, medium bouquets (M) cost 20€, and large bouquets (L) cost 30€.
+
 Once you have all required information, place the order using the tool and confirm the order details to the customer.`;
 
 export async function POST(req: Request) {

@@ -7,7 +7,10 @@ import {
 	listFlowers,
 	listOrders,
 } from "@flower-shop/lib";
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { Command } from "commander";
+import { z } from "zod";
 
 const program = new Command();
 
@@ -62,6 +65,74 @@ program
 		const db = getDb();
 		const order = await addOrder(db, parsed);
 		console.log(JSON.stringify(order, null, 2));
+	});
+
+program
+	.command("mcp")
+	.description("Start an MCP server (stdio transport)")
+	.action(async () => {
+		const db = getDb();
+
+		const server = new McpServer({
+			name: "flower-shop",
+			version: "0.1.0",
+		});
+
+		server.tool(
+			"list-orders",
+			"List the most recent orders from the flower shop",
+			{
+				skip: z
+					.number()
+					.int()
+					.min(0)
+					.optional()
+					.describe("Number of orders to skip"),
+				top: z
+					.number()
+					.int()
+					.min(1)
+					.max(100)
+					.optional()
+					.describe("Maximum number of orders to return (default 10)"),
+			},
+			async ({ skip, top }) => {
+				const orders = await listOrders(db, { skip, top });
+				return {
+					content: [{ type: "text", text: JSON.stringify(orders, null, 2) }],
+				};
+			},
+		);
+
+		server.tool(
+			"place-order",
+			"Place a new flower order",
+			{
+				customerName: z.string().min(1).describe("Name of the customer"),
+				flowerName: z
+					.string()
+					.min(1)
+					.describe("Name of the dominant flower in the bouquet"),
+				size: z
+					.enum(["S", "M", "L"])
+					.describe("Size of the bouquet: S, M, or L"),
+				color: z.string().min(1).describe("Color of the bouquet"),
+			},
+			async ({ customerName, flowerName, size, color }) => {
+				const order = await addOrder(db, {
+					customerName,
+					flowerName,
+					size,
+					color,
+				});
+				return {
+					content: [{ type: "text", text: JSON.stringify(order, null, 2) }],
+				};
+			},
+		);
+
+		const transport = new StdioServerTransport();
+		await server.connect(transport);
 	});
 
 program.parse();

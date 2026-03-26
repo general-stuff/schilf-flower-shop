@@ -1,0 +1,13 @@
+{
+	"servers": {
+		"flower-shop": {
+			"type": "stdio",
+			"command": "pnpm",
+			"args": [
+				"console",
+				"mcp"
+			]
+		}
+	},
+	"inputs": []
+}

@@ -15,6 +15,13 @@
 			"when": 1774533389490,
 			"tag": "0001_daily_ender_wiggin",
 			"breakpoints": true
+		},
+		{
+			"idx": 2,
+			"version": "6",
+			"when": 1774537610888,
+			"tag": "0002_loud_gorgon",
+			"breakpoints": true
 		}
 	]
 }

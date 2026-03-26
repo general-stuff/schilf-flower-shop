@@ -66,3 +66,19 @@ Fields:
 - `flowerName` (string, required) — the dominant flower in the bouquet
 - `size` (string, required) — one of "S", "M", or "L"
 - `color` (string, required) — the color of the bouquet
+
+### `mcp`
+Start an MCP server using stdio transport. The server exposes two tools:
+
+- **`list-orders`** — List the most recent orders. Optional parameters: `skip` (number of orders to skip), `top` (max orders to return, default 10).
+- **`place-order`** — Place a new flower order. Required parameters: `customerName`, `flowerName`, `size` (S/M/L), `color`.
+
+```bash
+pnpm console mcp
+```
+
+To test with the MCP Inspector:
+
+```bash
+npx @modelcontextprotocol/inspector -- pnpm console mcp
+```

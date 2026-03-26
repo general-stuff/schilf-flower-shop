@@ -1,8 +1,10 @@
+import { createHash } from "node:crypto";
 import { desc, sql } from "drizzle-orm";
 import type { BetterSQLite3Database } from "drizzle-orm/better-sqlite3";
+import { dot } from "mathjs";
 import { z } from "zod";
 
-import { flowers, orders } from "./schema.ts";
+import { flowerEmbeddings, flowers, orders } from "./schema.ts";
 
 type Db = BetterSQLite3Database<Record<string, unknown>>;
 
@@ -139,4 +141,86 @@ export async function listOrders(
 		.limit(top)
 		.offset(skip)
 		.all();
+}
+
+function sha256(text: string): string {
+	return createHash("sha256").update(text).digest("hex");
+}
+
+function float64ArrayToBuffer(arr: number[]): Buffer {
+	const buf = Buffer.alloc(arr.length * 8);
+	for (let i = 0; i < arr.length; i++) {
+		buf.writeDoubleLE(arr[i], i * 8);
+	}
+	return buf;
+}
+
+function bufferToFloat64Array(buf: Buffer): number[] {
+	const arr: number[] = [];
+	for (let i = 0; i < buf.length; i += 8) {
+		arr.push(buf.readDoubleLE(i));
+	}
+	return arr;
+}
+
+export async function getFlowersToEmbed(db: Db): Promise<number[]> {
+	const allFlowers = db.select().from(flowers).all();
+	const existingEmbeddings = db.select().from(flowerEmbeddings).all();
+
+	const embeddingMap = new Map(
+		existingEmbeddings.map((e) => [e.id, e.descriptionHash]),
+	);
+
+	const ids: number[] = [];
+	for (const flower of allFlowers) {
+		const hash = sha256(flower.description);
+		if (embeddingMap.get(flower.id) !== hash) {
+			ids.push(flower.id);
+		}
+	}
+	return ids;
+}
+
+export async function storeFlowerEmbedding(
+	db: Db,
+	id: number,
+	descriptionHash: string,
+	embedding: number[],
+): Promise<void> {
+	const vectorBuffer = float64ArrayToBuffer(embedding);
+	db.insert(flowerEmbeddings)
+		.values({ id, descriptionHash, descriptionVector: vectorBuffer })
+		.onConflictDoUpdate({
+			target: flowerEmbeddings.id,
+			set: { descriptionHash, descriptionVector: vectorBuffer },
+		})
+		.run();
+}
+
+export interface FlowerSearchResult {
+	id: number;
+	description: string;
+}
+
+export async function searchFlowers(
+	db: Db,
+	queryEmbedding: number[],
+): Promise<FlowerSearchResult[]> {
+	const allEmbeddings = db.select().from(flowerEmbeddings).all();
+	const allFlowers = db.select().from(flowers).all();
+	const flowerMap = new Map(allFlowers.map((f) => [f.id, f]));
+
+	const scored = allEmbeddings.map((e) => {
+		const vector = bufferToFloat64Array(e.descriptionVector as Buffer);
+		const score = dot(vector, queryEmbedding) as number;
+		return { id: e.id, score };
+	});
+
+	scored.sort((a, b) => b.score - a.score);
+	const top3 = scored.slice(0, 3);
+
+	return top3.map((s) => ({
+		id: s.id,
+		description: flowerMap.get(s.id)?.description ?? "",
+	}));
 }
